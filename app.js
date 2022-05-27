@@ -28,3 +28,10 @@ app.get("/sample", (req, res) => {
 
 app.listen(3000, function() {
 });
+
+//------TESTING AREA------------
+const migMath = require(__dirname + "/my_modules/basicMath.js");
+
+let nums = [1,2,3,4,1,25,1];
+let x = migMath.sum();
+console.log(x);
