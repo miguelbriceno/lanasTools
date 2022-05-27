@@ -1,0 +1,44 @@
+/* The CSS file is organized from top to bottom
+elemnts in the HTML file. */
+
+:root {
+  --h1Font: 'Caveat', cursive;
+  --nameFont: "Rajdhani", sans-serif;
+  --cmcLinkFont: "Staatliches", cursive;
+  --main-color: #30AADD;
+  --sec-color: #2666CF;
+}
+
+/*Here the rest of CSS*/
+
+/*Footer*/
+footer {
+  text-align: center;
+  margin: -0.5vw auto auto auto;
+  background-color: var(--sec-color);
+  padding: 2vw;
+}
+
+.myName {
+  font-family: var(--nameFont);
+  margin: 1vw auto 1vw auto;
+  color: #F2F2F2;
+}
+
+.cmcLink {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: var(--cmcLinkFont);
+  color: #3DBBDD;
+}
+
+/* RESPONSIVE */
+@media screen and (min-width: 610px) {
+}
+
+
+@media screen and (min-width: 720px) {
+}
+
+@media screen and (min-width: 1024px) {
+}
