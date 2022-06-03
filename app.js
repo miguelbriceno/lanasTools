@@ -32,7 +32,7 @@ app.listen(3000, function() {
 //------TESTING AREA------------
 const migMath = require(__dirname + "/my_modules/basicMath.js");
 
-let nums = [];
-let x = migMath.sum(nums);
+let nums = [1,2,[3,1],3,"4","5", 6.1, {"a":1}, "7.2", "hola"];
+let x = migMath.avg(nums, -2);
 console.log("Answer: " + x);
 // console.log(typeof x);
