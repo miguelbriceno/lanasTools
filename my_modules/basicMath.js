@@ -3,7 +3,9 @@ Contact at: https://github.com/miguelbriceno
 This is a free library, it is intended for beginners to do simple calculations.
 Each function will have its own explanation. */
 
-//-----CONV----
+/*------------------------------------------------------------------------------
+--------------------------------------CONV---------------------------------------
+------------------------------------------------------------------------------*/
 /* This function converts the elements of an array to numbers, if possible.
 Otherwise it omits them and log different errors.*/
 function convert(elArray){
@@ -73,4 +75,26 @@ module.exports.avg = (numbers, decimals) => {
   avg = sum / (operationalData.length);
   avg = Number(avg.toFixed(dec));
   return avg;
+}
+/*------------------------------------------------------------------------------
+--------------------------------------IS-EVEN-----------------------------------
+------------------------------------------------------------------------------*/
+/* Use recursion to subtract two by two from a number n, until
+it reaches 0 or 1, and that defines it as even or odd. Returns "true" if even. */
+module.exports.isEven = (n) => {
+  if (typeof n == "number"){
+    //In case a negative number is entered
+    n = Math.abs(n);
+    if (n == 0) {
+      return true;
+    } else if (n == 1) {
+      return false;
+    } else {
+      n = n - 2;
+      //Here it implements recursion by calling itself.
+      return isEven(n);
+    }
+  } else {
+    console.log(n + " no es un numero, pruebe ingresando un número.");
+  }
 }
