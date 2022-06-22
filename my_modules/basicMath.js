@@ -98,3 +98,45 @@ module.exports.isEven = (n) => {
     console.log(n + " no es un numero, pruebe ingresando un número.");
   }
 }
+/*------------------------------------------------------------------------------
+--------------------------------------RANGE-GEN---------------------------------
+------------------------------------------------------------------------------*/
+// Range generator
+/*Receive a starting number, an end and an interval to generate a range*/
+module.exports.newRange = (inicio, final, intervalo) => {
+  let rangeArray = [];
+  if (inicio == undefined || final == undefined) {   // Check if there is data
+    console.log("Error0: Ingresa un inicio, un final y un intervalo (opcional, por defecto se usará 1 o -1).");
+  } else if (typeof inicio != "number" || typeof final != "number") { // Check if they are numbers
+    console.log("Error1: Los datos ingresados deben ser números.");
+  } else if (inicio == final) { // Check if start and end are different
+    console.log("Error2: No se puede generar un rango entre números iguales.");
+  } else if (typeof intervalo != "number" && intervalo != undefined) { // Validate if there is a defined and valid interval or define it
+    console.log("Error3: El intervalo definido no es correcto, Debe ser un número.");
+  } else if (intervalo == 0 || intervalo == undefined) {
+    console.log("Warning1: El intervalo es cero o no fue definido, se usará el valor por defecto");
+    if (inicio < final) {intervalo = 1;} else if (inicio > final) {intervalo = -1;}
+  } else if (inicio < final && intervalo < 0) {
+    console.log("Error4: Los datos son incompatibles. No se puede generar un rango.");
+  } else if (inicio > final && intervalo > 0) {
+    console.log("Error5: Los datos son incompatibles. No se puede generar un rango.");
+  } else {
+    // console.log("Validaciones completadas");
+  }
+  // After the validations, the ranges are generated
+  if (intervalo > 0){ // Generate positive range
+    while (inicio <= final) {
+      rangeArray.push(inicio);
+      inicio += intervalo;
+    }
+  } else if (intervalo < 0){ // Generate negative range
+    while (inicio >= final) {
+      rangeArray.push(inicio);
+      inicio += intervalo;
+    }
+  }
+  return rangeArray;
+}
+/*------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+------------------------------------------------------------------------------*/
