@@ -69,7 +69,7 @@ module.exports.toUpperFirst = (cadena) => {
 ------------------------------------------------------------------------------*/
 // Data encoder
 // Receive a string and encode it so that it is unrecognizable without the decoding key.
-function codeThat(data, key){
+module.exports.codeThat = (data, key) => {
   // 0) Variables
   let dataType = typeof data, keyType = typeof key, keyDigit = 0, verificationCodes = [], encryptedData = {};
 
@@ -139,7 +139,7 @@ function codeThat(data, key){
 ------------------------------------------------------------------------------*/
 // Data decoder
 // Receives an object created by the codeThat function and a string with the key to decode it and returns the original string.
-function decodeThat(dataObject, key) {
+module.exports.decodeThat = (dataObject, key) => {
   // 0) Data verification and extraction
   if(typeof dataObject == "object" && (typeof key == "string" || typeof key == "number") && (dataObject.hasOwnProperty("data") && dataObject.hasOwnProperty("verifiers"))){
     if(typeof (dataObject.data == "string" || dataObject.data == "number") && dataObject.verifiers.length == 6){
